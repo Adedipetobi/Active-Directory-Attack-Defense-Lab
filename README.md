@@ -1,2 +1,9 @@
-# Active-Directory-Attack-Defense-Lab
-Hands-on Active Directory security lab focused on domain administration, attack simulation, detection, investigation, and defensive hardening.
+# Active Directory Attack & Defense Lab
+
+A hands-on cybersecurity lab focused on building, securing, testing, and investigating a Microsoft Active Directory environment.
+
+## Project Status
+
+🚧 In Progress
+
+This repository will be updated as each lab component is successfully implemented and tested.
