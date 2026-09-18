@@ -41,3 +41,4 @@ User Account Management    Success and Failure
 The testing confirmed that the Windows 11 domain-joined workstation records security events that can be used to investigate successful authentication, failed authentication attempts, and account-management activity.
 
 These audit logs will provide evidence for later controlled security testing and investigation phases of the lab.
+![User Account Management Auditing](../screenshots/05-security-auditing.png)
