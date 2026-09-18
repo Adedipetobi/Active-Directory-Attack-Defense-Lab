@@ -14,7 +14,7 @@ This repository will be updated as each lab component is successfully implemente
 - ✅ Samba Active Directory Domain Controller installed
 - ✅ `adlab.test` domain provisioned
 - ✅ Samba AD DC service verified as active
-- ⏳ Windows 11 workstation domain join
+- ✅  Windows 11 workstation domain join
 - ⏳ Active Directory users, groups, and organizational units
 - ⏳ Security auditing
 - ⏳ Attack simulations
@@ -41,6 +41,7 @@ The lab currently consists of:
 
 - [Lab Environment](docs/01-lab-environment.md)
 - [Active Directory Domain Controller Setup](docs/02-active-directory-domain-controller-setup.md)
+- [Windows 11 Domain Join](docs/03-domain-join.md)
 
 ## Evidence
 
