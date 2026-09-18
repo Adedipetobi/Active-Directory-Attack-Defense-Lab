@@ -18,7 +18,7 @@ This repository is updated as each lab component is successfully implemented and
 - ✅ Windows 11 workstation joined to the domain
 - ✅ Active Directory users, groups, and organizational units created
 - ✅ Windows security auditing configured and verified
-- ⏳ Normal domain activity testing
+- ✅ Normal domain activity testing
 - ⏳ Controlled attack simulations
 - ⏳ Detection and investigation
 - ⏳ Defensive hardening
@@ -58,6 +58,7 @@ A successful domain logon using `ADLAB\jsmith` and a controlled failed authentic
 - [Windows 11 Domain Join](docs/03-domain-join.md)
 - [Active Directory Objects](docs/04-active-directory-objects.md)
 - [Security Auditing](docs/05-security-auditing.md)
+- [Normal Domain Activity Baseline](docs/06-normal-domain-activity.md)
 
 ## Evidence
 
