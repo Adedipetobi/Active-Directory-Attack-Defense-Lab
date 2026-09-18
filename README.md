@@ -19,6 +19,7 @@ This repository is updated as each lab component is successfully implemented and
 - ✅ Active Directory users, groups, and organizational units created
 - ✅ Windows security auditing configured and verified
 - ✅ Normal domain activity testing
+- ✅ Kali Linux ARM attack/testing machine configured and verified
 - ⏳ Controlled attack simulations
 - ⏳ Detection and investigation
 - ⏳ Defensive hardening
