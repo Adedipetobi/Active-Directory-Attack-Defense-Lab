@@ -22,7 +22,7 @@ This repository is updated as each lab component is successfully implemented and
 - ✅ Kali Linux ARM attack/testing machine configured and verified
 - ✅ Active Directory enumeration
 - ✅ Controlled AD security testing
-- ⏳ Detection and investigation
+- ✅ Detection and investigation
 - ⏳ Defensive hardening
 
 ## Lab Environment
@@ -69,6 +69,20 @@ The Kerberos test successfully obtained a service ticket for the configured SPN.
 
 All security testing was performed exclusively within the isolated lab environment.
 
+## Detection and Investigation
+
+Failed SMB authentication activity generated from the Kali Linux VM was investigated using Samba authentication logs on the Domain Controller.
+
+The investigation identified five failed authentication attempts from `192.168.106.129`, targeting the `jsmith` and `Administrator` accounts.
+
+A Bash detection was created and validated to alert when five or more matching failed SMB authentication events are present in the monitored Samba log.
+
+The detection was tested under both alerting and non-alerting conditions.
+
+Detection rule:
+
+`detection-rules/detect-smb-failures.sh`
+
 ## Documentation
 
 - [Lab Environment](docs/01-lab-environment.md)
@@ -80,6 +94,7 @@ All security testing was performed exclusively within the isolated lab environme
 - [Kali Linux Attack Machine](docs/07-kali-attack-machine.md)
 - [Active Directory Enumeration](docs/08-ad-enumeration.md)
 - [Controlled AD Security Testing](docs/09-controlled-ad-security-testing.md)
+- [Detection and Investigation](docs/10-detection-and-investigation.md)
 
 ## Evidence
 
