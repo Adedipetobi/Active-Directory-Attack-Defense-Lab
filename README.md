@@ -233,7 +233,7 @@ A Bash-based detection identified repeated failed SMB authentication attempts fr
 
 After configuring an account lockout threshold of five failed attempts, defensive retesting verified that the test account was locked after repeated incorrect authentication attempts.
 
-![Account Lockout Verification](screenshots/account-lockout-verification.png)
+![Account Lockout Verification](screenshots/account-lockout-defense-verification.png)
 
 ### Anonymous Enumeration Hardening
 
