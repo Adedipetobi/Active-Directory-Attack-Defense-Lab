@@ -10,7 +10,7 @@ The lab uses VMware Fusion on macOS to host an isolated Active Directory environ
 
 ## Project Status
 
-🚧 In Progress
+✅ Completed
 
 This repository is updated as each lab component is successfully implemented and verified.
 
