@@ -2,6 +2,12 @@
 
 A hands-on cybersecurity lab focused on building, securing, testing, and investigating an Active Directory environment.
 
+## Lab Architecture
+
+![Active Directory Attack & Defense Lab Architecture](diagrams/active-directory-lab-architecture.png)
+
+The lab uses VMware Fusion on macOS to host an isolated Active Directory environment consisting of a Samba Active Directory Domain Controller, a domain-joined Windows 11 workstation, and a Kali Linux security-testing machine.
+
 ## Project Status
 
 🚧 In Progress
