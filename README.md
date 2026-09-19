@@ -43,6 +43,56 @@ The lab currently consists of:
 - **Windows 11 ARM** — Domain-joined Windows workstation
 - **Kali Linux ARM** — Security testing system
 
+## Technologies & Skills
+
+### Platforms
+- macOS
+- VMware Fusion Pro
+- Ubuntu Server ARM64
+- Windows 11 ARM
+- Kali Linux ARM
+
+### Active Directory & Networking
+- Samba Active Directory Domain Controller
+- Active Directory domain administration
+- Kerberos
+- SMB
+- LDAP
+- DNS
+- Windows domain authentication
+
+### Security Testing
+- Nmap
+- NetExec
+- rpcclient
+- smbclient
+- Controlled credential testing
+- Active Directory enumeration
+
+### Detection & Investigation
+- Samba authentication logs
+- Windows Event Viewer
+- Windows Security auditing
+- Bash scripting
+- Failed-authentication detection
+- Authentication log investigation
+
+### Defensive Security
+- Account lockout policy
+- Anonymous enumeration restrictions
+- Security control validation
+- Defensive retesting
+
+## Key Outcomes
+
+- Built and administered an isolated Samba Active Directory domain.
+- Joined and audited a Windows 11 workstation in the `adlab.test` domain.
+- Performed controlled Active Directory enumeration and credential testing from Kali Linux.
+- Demonstrated compromise of a deliberately vulnerable standard domain account and validated authenticated SMB access.
+- Investigated authentication activity using Samba logs and built a Bash-based failed-authentication detection.
+- Implemented an account lockout threshold of five failed attempts and verified account lockout through defensive retesting.
+- Restricted anonymous Samba enumeration and verified that previously accessible user, password-policy, and RPC information was no longer exposed through the tested anonymous paths.
+
 ## Active Directory Domain
 
 - **Domain:** `adlab.test`
@@ -154,3 +204,39 @@ The compromise was limited to the deliberately vulnerable standard domain accoun
 ### Failed Authentication
 
 ![Failed Logon Event 4625](screenshots/security-event-4625-failed-logon.png)
+
+### Controlled Credential Attack
+
+A controlled password attack against the deliberately vulnerable `weakuser` account successfully identified the configured weak password.
+
+![Controlled Credential Attack](screenshots/dictionary-attack-success.png)
+
+### Authenticated SMB Access
+
+The recovered credentials were used to authenticate to the Domain Controller and access the `SYSVOL` share.
+
+![Authenticated SYSVOL Access](screenshots/authenticated-sysvol-access.png)
+
+### Attack Investigation
+
+Samba authentication logs were reviewed to identify failed authentication activity generated from the Kali Linux testing machine.
+
+![Failed SMB Login Investigation](screenshots/failed-smb-login-investigation.png)
+
+### Failed Authentication Detection
+
+A Bash-based detection identified repeated failed SMB authentication attempts from the Kali Linux testing machine.
+
+![SMB Failed Authentication Detection](screenshots/smb-failed-authentication-detection.png)
+
+### Account Lockout Hardening
+
+After configuring an account lockout threshold of five failed attempts, defensive retesting verified that the test account was locked after repeated incorrect authentication attempts.
+
+![Account Lockout Verification](screenshots/account-lockout-verification.png)
+
+### Anonymous Enumeration Hardening
+
+Anonymous Samba enumeration was restricted and retested. Previously accessible anonymous enumeration paths no longer exposed the tested domain information.
+
+![Anonymous Enumeration Hardening](screenshots/anonymous-enumeration-hardening.png)
