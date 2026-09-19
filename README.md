@@ -23,7 +23,9 @@ This repository is updated as each lab component is successfully implemented and
 - ✅ Active Directory enumeration
 - ✅ Controlled AD security testing
 - ✅ Detection and investigation
-- ⏳ Defensive hardening
+- ✅ Controlled account compromise
+- ✅ Account lockout defensive hardening and retest
+- ⏳ Additional defensive hardening
 
 ## Lab Environment
 
@@ -83,6 +85,26 @@ Detection rule:
 
 `detection-rules/detect-smb-failures.sh`
 
+## Controlled Account Compromise and Defense
+
+A deliberately vulnerable domain account named `weakuser` was configured with a weak password for controlled security testing.
+
+A password attack from the Kali Linux VM successfully identified the account password. The recovered credentials were then used to authenticate to the Domain Controller over SMB and access the `SYSVOL` share.
+
+Samba authentication logs were investigated and showed repeated failed password attempts from the Kali Linux system followed by successful authentication.
+
+The domain was then hardened by changing the account lockout threshold from unlimited attempts (`0`) to five failed attempts.
+
+A defensive retest verified that five incorrect authentication attempts locked the account. A subsequent authentication attempt using the correct password returned:
+
+`NT_STATUS_ACCOUNT_LOCKED_OUT`
+
+This demonstrated a complete attack-and-defense cycle:
+
+**Weak credential → password attack → credential discovery → authenticated SMB access → investigation → hardening → defensive retest**
+
+The compromise was limited to the deliberately vulnerable standard domain account. No privilege escalation or Domain Administrator compromise is claimed.
+
 ## Documentation
 
 - [Lab Environment](docs/01-lab-environment.md)
@@ -95,6 +117,7 @@ Detection rule:
 - [Active Directory Enumeration](docs/08-ad-enumeration.md)
 - [Controlled AD Security Testing](docs/09-controlled-ad-security-testing.md)
 - [Detection and Investigation](docs/10-detection-and-investigation.md)
+- [Controlled Account Compromise and Defense](docs/11-controlled-account-compromise-and-defense.md)
 
 ## Evidence
 
