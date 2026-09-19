@@ -25,7 +25,7 @@ This repository is updated as each lab component is successfully implemented and
 - ✅ Detection and investigation
 - ✅ Controlled account compromise
 - ✅ Account lockout defensive hardening and retest
-- ⏳ Additional defensive hardening
+- ✅ Anonymous enumeration hardening and retest
 
 ## Lab Environment
 
@@ -70,6 +70,21 @@ Verified testing included:
 The Kerberos test successfully obtained a service ticket for the configured SPN. Kerberoast hash extraction and password cracking were not successfully completed and are therefore not claimed as project results.
 
 All security testing was performed exclusively within the isolated lab environment.
+
+## Controlled Compromise and Defensive Hardening
+
+A deliberately weak lab account was used to perform a controlled credential attack from the Kali Linux VM. The recovered credentials were validated through authenticated SMB access to the Domain Controller.
+
+Defensive controls were then implemented and retested:
+
+- Configured an account lockout threshold of five failed attempts
+- Verified account lockout with `NT_STATUS_ACCOUNT_LOCKED_OUT`
+- Restricted anonymous Samba enumeration using `restrict anonymous = 2`
+- Verified anonymous user enumeration no longer exposed domain accounts
+- Verified anonymous password-policy enumeration no longer exposed policy information
+- Verified anonymous RPC access was denied with `NT_STATUS_ACCESS_DENIED`
+
+This demonstrated an end-to-end **attack → investigation → remediation → retesting** workflow within the isolated lab environment.
 
 ## Detection and Investigation
 
@@ -118,6 +133,7 @@ The compromise was limited to the deliberately vulnerable standard domain accoun
 - [Controlled AD Security Testing](docs/09-controlled-ad-security-testing.md)
 - [Detection and Investigation](docs/10-detection-and-investigation.md)
 - [Controlled Account Compromise and Defense](docs/11-controlled-account-compromise-and-defense.md)
+- [Defensive Hardening](docs/12-defensive-hardening.md)
 
 ## Evidence
 
