@@ -20,8 +20,8 @@ This repository is updated as each lab component is successfully implemented and
 - ✅ Windows security auditing configured and verified
 - ✅ Normal domain activity testing
 - ✅ Kali Linux ARM attack/testing machine configured and verified
-- ✅ ad-enumeration 
-- ⏳ Controlled attack simulations
+- ✅ Active Directory enumeration
+- ✅ Controlled AD security testing
 - ⏳ Detection and investigation
 - ⏳ Defensive hardening
 
@@ -53,6 +53,22 @@ Verified security activity includes:
 
 A successful domain logon using `ADLAB\jsmith` and a controlled failed authentication attempt were captured and reviewed in Windows Event Viewer.
 
+## Controlled Security Testing
+
+Controlled security testing was performed from the Kali Linux VM against the isolated Active Directory lab.
+
+Verified testing included:
+
+- Domain Controller service enumeration with Nmap
+- Anonymous domain password-policy enumeration
+- Anonymous domain-user enumeration
+- Kerberos service-ticket acquisition for the configured `svc_sql` SPN
+- Controlled failed SMB authentication
+
+The Kerberos test successfully obtained a service ticket for the configured SPN. Kerberoast hash extraction and password cracking were not successfully completed and are therefore not claimed as project results.
+
+All security testing was performed exclusively within the isolated lab environment.
+
 ## Documentation
 
 - [Lab Environment](docs/01-lab-environment.md)
@@ -61,6 +77,9 @@ A successful domain logon using `ADLAB\jsmith` and a controlled failed authentic
 - [Active Directory Objects](docs/04-active-directory-objects.md)
 - [Security Auditing](docs/05-security-auditing.md)
 - [Normal Domain Activity Baseline](docs/06-normal-domain-activity.md)
+- [Kali Linux Attack Machine](docs/07-kali-attack-machine.md)
+- [Active Directory Enumeration](docs/08-ad-enumeration.md)
+- [Controlled AD Security Testing](docs/09-controlled-ad-security-testing.md)
 
 ## Evidence
 
